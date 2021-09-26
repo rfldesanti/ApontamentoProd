@@ -1,8 +1,0 @@
-Sub VariaveisGerais()
-
-Dim ApontaOP As Worksheet
-Dim ordem_prod As Range
-Set ApontaOP = Worksheets(1)
-Set ordem_prod = ApontaOP.Range("J7")
-
-End Sub

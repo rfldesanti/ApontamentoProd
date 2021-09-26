@@ -1,0 +1,5 @@
+Sub botao()
+
+    MsgBox ordem_prod.Value
+
+End Sub

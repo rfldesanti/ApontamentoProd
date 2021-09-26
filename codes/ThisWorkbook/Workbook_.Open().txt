@@ -1,0 +1,6 @@
+Public Sub Workbook_Open()
+
+    Set ApontaOP = Worksheets(1)
+    Set ordem_prod = ApontaOP.Range("J7")
+
+End Sub

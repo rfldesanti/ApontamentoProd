@@ -1,0 +1,4 @@
+Option Explicit
+
+Global ApontaOP As Worksheet
+Global ordem_prod As Range
