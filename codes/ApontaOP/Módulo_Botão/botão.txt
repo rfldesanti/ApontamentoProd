@@ -1,5 +1,5 @@
 Sub botao()
 
-    MsgBox ordem_prod.Value
+    Call ContaLinhas
 
 End Sub
