@@ -3,3 +3,4 @@ Option Explicit
 Global ApontaOP As Worksheet
 Global ordem_prod As Range
 Global registros As Worksheet
+Global UltimaLinha As Integer

@@ -1,5 +1,7 @@
 Sub botao()
 
-    Call ContaLinhas
-
+   Call ContaLinhas
+   linha = UltimaLinha
+   registros.Cells(linha, 1).Value = ordem_prod.Value
+   
 End Sub
