@@ -1,7 +1,7 @@
 Public Sub Workbook_Open()
 
-    Set ApontaOP = Worksheets(1)
-    Set registros = Worksheets(2)
+    Set ApontaOP = Worksheets("ApontaOP")
+    Set registros = Worksheets("registros")
     Set ordem_prod = ApontaOP.Range("J7")
 
 End Sub
