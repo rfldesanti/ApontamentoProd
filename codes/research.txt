@@ -1,0 +1,27 @@
+Sub SpeciallCells()
+
+Dim ap As Worksheet
+Dim db As Worksheet
+
+Set ap = Worksheets("ap")
+Set db = Worksheets("db")
+
+db.AutoFilterMode = False
+
+op = ap.Cells(2, 1).Value
+
+db.Activate
+
+db.UsedRange.AutoFilter 1, op
+
+ultimaLinha = Cells(Rows.Count, 1).End(xlUp).Row
+db.Cells(ultimaLinha, 1).Offset(, 1).Copy
+
+'db.Range(Cells(ultimaLinha, 1), Cells(ultimaLinha, 1)).Select
+'db.Range("B4").SpecialCells(xlCellTypeVisible).Copy
+ap.Cells(2, 2).PasteSpecial xlPasteValues
+db.AutoFilterMode = False
+Application.CutCopyMode = False
+'AutoFilterMode = remove as "setas" de filtro
+'Limpa área de transferência: Application.CutCopyMode = False
+End Sub
