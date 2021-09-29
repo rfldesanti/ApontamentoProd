@@ -1,7 +1,13 @@
 Sub botao()
+'Talvez seja preciso verificar se não será informado valores com ESPAÇO nos campos
 
-   Call ContaLinhas
-   linha = UltimaLinha
-   registros.Cells(linha, 1).Value = ordem_prod.Value
-   
+    If IsEmpty(ordem_prod.Value) Or ordem_prod.Value = " " Or IsEmpty(id_funcionario) _
+    Or id_funcionario.Value = " " Then
+        MsgBox "Informe os valores"
+    Exit Sub
+    Else
+        Call ContaLinhas
+        linha = UltimaLinha
+        registros.Cells(linha, 1).Value = ordem_prod.Value
+   End If
 End Sub

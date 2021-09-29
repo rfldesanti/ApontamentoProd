@@ -3,6 +3,6 @@ Public Sub Workbook_Open()
     Set ApontaOP = Worksheets("ApontaOP")
     Set registros = Worksheets("registros")
     Set ordem_prod = ApontaOP.Range("J7")
-    id_funcionario = ApontaOP.Range("J10").Value
+    Set id_funcionario = ApontaOP.Range("J10")
 
 End Sub
