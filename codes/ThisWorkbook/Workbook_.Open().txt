@@ -1,5 +1,5 @@
 Public Sub Workbook_Open()
-'Adicionando comentário para testar MERGE
+
     Set ApontaOP = Worksheets("ApontaOP")
     Set registros = Worksheets("registros")
     Set ordem_prod = ApontaOP.Range("J7")
