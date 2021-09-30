@@ -6,3 +6,4 @@ Global registros As Worksheet
 Global UltimaLinha As Integer
 Global id_funcionario As Range
 Global db As Worksheet
+'comment
