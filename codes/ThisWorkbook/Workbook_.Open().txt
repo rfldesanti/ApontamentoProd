@@ -3,6 +3,7 @@ Public Sub Workbook_Open()
     Set ApontaOP = Worksheets("ApontaOP")
     Set registros = Worksheets("registros")
     Set db = Worksheets("db")
+    Set mq = Worksheets("mq")
     Set ordem_prod = ApontaOP.Range("J7")
     Set id_funcionario = ApontaOP.Range("J10")
 
