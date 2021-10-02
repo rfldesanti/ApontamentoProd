@@ -1,0 +1,6 @@
+Sub RegistroNovo()
+
+Call ContaLinhas
+registros.Cells(UltimaLinha, 1).Value = ordem_prod
+
+End Sub
