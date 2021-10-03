@@ -14,5 +14,4 @@ Global date_in As Range
 Global date_out As Range
 Global qnt As Range
 Global desc_oper As Range
-Global las_line_db As Integer
-
+Global last_line_db As Integer
