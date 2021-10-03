@@ -1,0 +1,12 @@
+Sub RegistroNovo()
+
+If Not IsError(Application.Match(ordem_prod, db.Range("D:D"), 0)) Then
+    Call ContaLinhas
+    registros.Cells(UltimaLinha, 1).Value = ordem_prod
+Else
+    MsgBox "Ordem não encontrada - Informe novo valor"
+    ordem_prod.ClearContents
+    Call botao
+End If
+
+End Sub
