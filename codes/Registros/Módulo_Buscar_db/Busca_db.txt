@@ -1,0 +1,6 @@
+Sub Busca_db()
+
+db.AutoFilterMode = False
+db.UsedRange.AutoFilter 4, ordem_prod
+
+End Sub
