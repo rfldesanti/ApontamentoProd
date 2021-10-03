@@ -1,0 +1,7 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+If Target.Column = 1 Then
+    Cells(UltimaLinha, 2).Value = Now
+End If
+
+End Sub
