@@ -7,5 +7,5 @@ Public Sub Workbook_Open()
     Set ordem_prod = ApontaOP.Range("J7")
     Set id_funcionario = ApontaOP.Range("J10")
     Set mq = ApontaOP.Range("L7")
-
+  
 End Sub

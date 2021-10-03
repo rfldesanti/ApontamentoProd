@@ -14,4 +14,7 @@ Sub botao()
             Call RegistroExistente
         End If
     End If
+    ordem_prod.ClearContents
+    mq.ClearContents
+    id_funcionario.ClearContents
 End Sub
