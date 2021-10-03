@@ -1,11 +1,11 @@
 Sub Busca_db()
 
-last_line_db = Application.WorksheetFunction.Match(ordem_prod, db.Range("D:D"), 0)
-  Set item = db.Cells(last_line_db, 1)
-  Set cod_dpt = db.Cells(last_line_db, 5)
-  Set date_in = db.Cells(last_line_db, 6)
-  Set date_out = db.Cells(last_line_db, 7)
-  Set qnt = db.Cells(last_line_db, 12)
-  Set desc_oper = db.Cells(last_line_db, 23)
-
+    last_line_db = Application.WorksheetFunction.Match(ordem_prod, db.Range("D:D"), 0)
+    Set item = db.Cells(last_line_db, 1)
+    Set cod_dpt = db.Cells(last_line_db, 5)
+    Set date_in = db.Cells(last_line_db, 6)
+    Set date_out = db.Cells(last_line_db, 7)
+    Set qnt = db.Cells(last_line_db, 12)
+    Set desc_oper = db.Cells(last_line_db, 23)
+    
 End Sub
