@@ -4,6 +4,13 @@ If Target.Column = 1 Then
     Cells(UltimaLinha, 2).Value = Now()
     Cells(UltimaLinha, 11).Value = mq
     Cells(UltimaLinha, 12).Value = id_funcionario
+    Call Busca_db
+    Cells(UltimaLinha, 4).Value = item
+    Cells(UltimaLinha, 6).Value = qnt
+    Cells(UltimaLinha, 7).Value = cod_dpt
+    Cells(UltimaLinha, 8).Value = desc_oper
+    Cells(UltimaLinha, 9).Value = date_in
+    Cells(UltimaLinha, 10).Value = date_out
 End If
 
 End Sub
