@@ -8,3 +8,11 @@ Global id_funcionario As Range
 Global db As Worksheet
 Global mq_db As Worksheet
 Global mq As Range
+Global item As Range
+Global cod_dpt As Range
+Global date_in As Range
+Global date_out As Range
+Global qnt As Range
+Global desc_oper As Range
+Global las_line_db As Integer
+
