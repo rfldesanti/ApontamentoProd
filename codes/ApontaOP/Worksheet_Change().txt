@@ -6,11 +6,13 @@ If Target = ordem_prod Then
             registros.AutoFilterMode = False
             registros.UsedRange.AutoFilter 1, ordem_prod
             Call ContaLinhas
-            If IsEmpty(registros.Cells(UltimaLinha - 1, 3)) Then
+            If Not IsEmpty(registros.Cells(UltimaLinha - 1, 3)) Then
                 MsgBox "Vou formatar como entrada!"
             Else
                 MsgBox "Vou fomatar como saída!"
             End If
+        Else
+            MsgBox "Vou formatar como entrada!"
         End If
     End If
 End If
