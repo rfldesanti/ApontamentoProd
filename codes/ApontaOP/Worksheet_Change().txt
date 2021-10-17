@@ -22,16 +22,40 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
                 With sMerge
                     .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
                     .BorderAround ColorIndex:=3
-                    .Interior ColorIndex:=5
+                    .Interior.ColorIndex = 5
                     With .Font
                         .Bold = True
-                        .Color = RGB(0, 255, 0)
+                        .Color = RGB(255, 255, 255)
                     End With
                 End With
+                ApontaOP.Protect "TESTE"
                 'Desproteger a Planilha
                 'Realizar as formatações
             Else
                 MsgBox "Vou fomatar como saída!"
+                ApontaOP.Unprotect "TESTE"
+                With ApontaOP.Range("J2")
+                    .HorizontalAlignment = xlCenter
+                    .VerticalAlignment = xlCenter
+                End With
+                
+                ApontaOP.Range("J2:L3").Merge
+                
+                Set sMerge = ApontaOP.Range("J2:L3")
+                
+                With sMerge
+                    .Value = "REGISTRAR FINAL DE PRODUÇÃO - SAÍDA DE OP DA MÁQUINA"
+                    .BorderAround ColorIndex:=3
+                    .Interior.ColorIndex = 45
+                    With .Font
+                        .Bold = True
+                        .Color = RGB(255, 255, 255)
+                        
+                    End With
+                End With
+                ApontaOP.Protect "TESTE"
+                'Desproteger a Planilha
+                'Realizar as formatações
             End If
         Else
             MsgBox "Vou formatar como entrada!"
