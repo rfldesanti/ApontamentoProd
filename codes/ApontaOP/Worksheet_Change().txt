@@ -1,6 +1,6 @@
 Private Sub Worksheet_Change(ByVal Target As Range)
 
-If Target = ordem_prod Then
+If Not Intersect(ordem_prod, Target) Is Nothing Then
     If ordem_prod.Value <> "" Then
         If Not IsError(Application.Match(ordem_prod, registros.Range("A:A"), 0)) Then
             registros.AutoFilterMode = False
@@ -8,11 +8,53 @@ If Target = ordem_prod Then
             Call ContaLinhas
             If Not IsEmpty(registros.Cells(UltimaLinha - 1, 3)) Then
                 MsgBox "Vou formatar como entrada!"
+                ApontaOP.Unprotect "TESTE"
+                With ApontaOP.Range("J2")
+                    .HorizontalAlignment = xlCenter
+                    .VerticalAlignment = xlCenter
+                End With
+                
+                ApontaOP.Range("J2:L3").Merge
+                
+                Set sMerge = ApontaOP.Range("J2:L3")
+                
+                With sMerge
+                    .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
+                    .BorderAround ColorIndex:=3
+                    .Interior.ColorIndex = 8
+                    With .Font
+                        .Bold = True
+                        .Color = RGB(0, 255, 0)
+                    End With
+                End With
+                'Desproteger a Planilha
+                'Realizar as formatações
             Else
                 MsgBox "Vou fomatar como saída!"
             End If
         Else
             MsgBox "Vou formatar como entrada!"
+            ApontaOP.Unprotect "TESTE"
+                With ApontaOP.Range("J2")
+                    .HorizontalAlignment = xlCenter
+                    .VerticalAlignment = xlCenter
+                End With
+                
+                ApontaOP.Range("J2:L3").Merge
+                
+                Set sMerge = ApontaOP.Range("J2:L3")
+                
+                With sMerge
+                    .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
+                    .BorderAround ColorIndex:=3
+                    .Interior.ColorIndex = 8
+                    With .Font
+                        .Bold = True
+                        .Color = RGB(0, 255, 0)
+                    End With
+                End With
+                'Desproteger a Planilha
+                'Realizar as formatações
         End If
     End If
 End If
