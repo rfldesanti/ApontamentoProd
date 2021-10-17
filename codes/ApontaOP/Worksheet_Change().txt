@@ -1,5 +1,6 @@
 Private Sub Worksheet_Change(ByVal Target As Range)
 
+'If Target = ordem_prod Then
 If Not Intersect(ordem_prod, Target) Is Nothing Then
     If ordem_prod.Value <> "" Then
         If Not IsError(Application.Match(ordem_prod, registros.Range("A:A"), 0)) Then
@@ -21,7 +22,7 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
                 With sMerge
                     .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
                     .BorderAround ColorIndex:=3
-                    .Interior.ColorIndex = 8
+                    .Interior ColorIndex:=5
                     With .Font
                         .Bold = True
                         .Color = RGB(0, 255, 0)
@@ -47,12 +48,14 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
                 With sMerge
                     .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
                     .BorderAround ColorIndex:=3
-                    .Interior.ColorIndex = 8
+                    .Interior.ColorIndex = 5
                     With .Font
                         .Bold = True
-                        .Color = RGB(0, 255, 0)
+                        .Color = RGB(255, 255, 255)
+                        
                     End With
                 End With
+                ApontaOP.Protect "TESTE"
                 'Desproteger a Planilha
                 'Realizar as formatações
         End If
