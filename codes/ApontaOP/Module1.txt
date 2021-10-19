@@ -1,0 +1,39 @@
+Sub MUC2_PROC()
+
+mq.ClearContents
+
+ApontaOP.Unprotect "TESTE"
+
+mq.Validation _
+ .Modify xlValidateList, xlValidAlertStop, _
+  xlBetween, "=mq_db!$A$2:$A$6"
+  
+ApontaOP.Protect "TESTE"
+
+End Sub
+Sub MUC2_FINAL()
+
+mq.ClearContents
+
+ApontaOP.Unprotect "TESTE"
+
+mq.Validation _
+ .Modify xlValidateList, xlValidAlertStop, _
+  xlBetween, "=mq_db!$B$2:$B$6"
+  
+ApontaOP.Protect "TESTE"
+
+End Sub
+Sub MRFR()
+
+mq.ClearContents
+
+ApontaOP.Unprotect "TESTE"
+
+mq.Validation _
+ .Modify xlValidateList, xlValidAlertStop, _
+  xlBetween, "=mq_db!$C$2:$C$6"
+  
+ApontaOP.Protect "TESTE"
+  
+End Sub
