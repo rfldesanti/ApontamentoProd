@@ -14,10 +14,12 @@ Sub botao()
             Call RegistroExistente
         End If
     End If
+    ApontaOP.Unprotect "TESTE"
     ordem_prod.ClearContents
+    mq.Locked = False
     mq.ClearContents
     id_funcionario.ClearContents
-    ApontaOP.Unprotect "TESTE"
+    'ApontaOP.Unprotect "TESTE"
     ApontaOP.Range("J2:L4").Clear
     ApontaOP.Range("J2:L4").Interior.Color = RGB(255, 255, 255)
     ApontaOP.Protect "TESTE"

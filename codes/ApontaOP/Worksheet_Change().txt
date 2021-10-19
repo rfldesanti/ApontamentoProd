@@ -53,6 +53,8 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
                         
                     End With
                 End With
+                Call BuscaMQ
+                mq.Locked = True
                 ApontaOP.Protect "TESTE"
                 'Desproteger a Planilha
                 'Realizar as formatações

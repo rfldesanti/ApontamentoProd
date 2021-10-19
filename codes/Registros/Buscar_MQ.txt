@@ -1,0 +1,8 @@
+Sub BuscaMQ()
+
+registros.AutoFilterMode = False
+registros.UsedRange.AutoFilter 1, ordem_prod
+Call ContaLinhas
+mq.Value = registros.Cells(UltimaLinha - 1, 11).Value
+registros.AutoFilterMode = False
+End Sub

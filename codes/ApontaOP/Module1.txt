@@ -1,39 +1,45 @@
 Sub MUC2_PROC()
 
-mq.ClearContents
+If mq.Value = "" Then
+    mq.ClearContents
 
-ApontaOP.Unprotect "TESTE"
+    ApontaOP.Unprotect "TESTE"
 
-mq.Validation _
- .Modify xlValidateList, xlValidAlertStop, _
-  xlBetween, "=mq_db!$A$2:$A$6"
+    mq.Validation _
+        .Modify xlValidateList, xlValidAlertStop, _
+        xlBetween, "=mq_db!$A$2:$A$6"
   
-ApontaOP.Protect "TESTE"
+    ApontaOP.Protect "TESTE"
+End If
 
 End Sub
 Sub MUC2_FINAL()
 
-mq.ClearContents
+If mq.Value = "" Then
+    mq.ClearContents
 
-ApontaOP.Unprotect "TESTE"
+    ApontaOP.Unprotect "TESTE"
 
-mq.Validation _
- .Modify xlValidateList, xlValidAlertStop, _
-  xlBetween, "=mq_db!$B$2:$B$6"
+    mq.Validation _
+        .Modify xlValidateList, xlValidAlertStop, _
+        xlBetween, "=mq_db!$B$2:$B$6"
   
-ApontaOP.Protect "TESTE"
+    ApontaOP.Protect "TESTE"
+End If
 
 End Sub
 Sub MRFR()
 
-mq.ClearContents
+If mq.Value = "" Then
+    mq.ClearContents
 
-ApontaOP.Unprotect "TESTE"
+    ApontaOP.Unprotect "TESTE"
 
-mq.Validation _
- .Modify xlValidateList, xlValidAlertStop, _
-  xlBetween, "=mq_db!$C$2:$C$6"
+    mq.Validation _
+        .Modify xlValidateList, xlValidAlertStop, _
+        xlBetween, "=mq_db!$C$2:$C$6"
   
-ApontaOP.Protect "TESTE"
-  
+    ApontaOP.Protect "TESTE"
+End If
+
 End Sub
