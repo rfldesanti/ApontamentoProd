@@ -1,10 +1,11 @@
 Sub RegistroNovo()
 
-If Not IsError(Application.Match(ordem_prod, db.Range("D:D"), 0)) Then
+If Not IsError(Application.Match(ordem_prod, db.Range("D:D"), 0)) And _
+Not IsError(Application.Match(id_funcionario, db_funcionarios.Range("A:A"), 0)) Then
     Call ContaLinhas
     registros.Cells(UltimaLinha, 1).Value = ordem_prod
 Else
-    MsgBox "Ordem não encontrada - Informe novo valor"
+    MsgBox "Ordem e\ou funcionário não encontrados - Informe novos valores"
     ordem_prod.ClearContents
     Call botao
 End If
