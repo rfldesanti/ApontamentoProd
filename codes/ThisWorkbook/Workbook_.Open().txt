@@ -1,3 +1,9 @@
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+
+    If Me.Saved = False Then Me.Save
+
+End Sub
+
 Public Sub Workbook_Open()
 
     Set ApontaOP = Worksheets("ApontaOP")
