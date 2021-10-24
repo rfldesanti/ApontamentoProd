@@ -10,6 +10,18 @@ If mq.Value = "" Then
         xlBetween, "=mq_db!$A$2:$A$6"
   
     ApontaOP.Protect "TESTE"
+Else
+    If mq.Locked = False And IsError(Application.Match(mq.Value, mq_db.Range("A:A"), 0)) Then
+        mq.ClearContents
+
+        ApontaOP.Unprotect "TESTE"
+
+        mq.Validation _
+            .Modify xlValidateList, xlValidAlertStop, _
+            xlBetween, "=mq_db!$A$2:$A$6"
+  
+        ApontaOP.Protect "TESTE"
+    End If
 End If
 
 End Sub
@@ -25,6 +37,18 @@ If mq.Value = "" Then
         xlBetween, "=mq_db!$B$2:$B$6"
   
     ApontaOP.Protect "TESTE"
+Else
+    If mq.Locked = False And IsError(Application.Match(mq.Value, mq_db.Range("B:B"), 0)) Then
+        mq.ClearContents
+
+        ApontaOP.Unprotect "TESTE"
+
+        mq.Validation _
+            .Modify xlValidateList, xlValidAlertStop, _
+            xlBetween, "=mq_db!$B$2:$B$6"
+  
+        ApontaOP.Protect "TESTE"
+    End If
 End If
 
 End Sub
@@ -40,6 +64,18 @@ If mq.Value = "" Then
         xlBetween, "=mq_db!$C$2:$C$6"
   
     ApontaOP.Protect "TESTE"
+Else
+    If mq.Locked = False And IsError(Application.Match(mq.Value, mq_db.Range("C:C"), 0)) Then
+        mq.ClearContents
+
+        ApontaOP.Unprotect "TESTE"
+
+        mq.Validation _
+            .Modify xlValidateList, xlValidAlertStop, _
+            xlBetween, "=mq_db!$C$2:$C$6"
+  
+        ApontaOP.Protect "TESTE"
+    End If
 End If
 
 End Sub
