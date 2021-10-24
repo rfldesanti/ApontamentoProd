@@ -10,6 +10,11 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
             If Not IsEmpty(registros.Cells(UltimaLinha - 1, 3)) Then
                 MsgBox "Vou formatar como entrada!"
                 ApontaOP.Unprotect "TESTE"
+                'Limpar dados de mq caso a OP seja deletada
+                If mq.Locked Then
+                    mq.Locked = False
+                    mq.ClearContents
+                End If
                 With ApontaOP.Range("J2")
                     .HorizontalAlignment = xlCenter
                     .VerticalAlignment = xlCenter
@@ -84,6 +89,17 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
                 ApontaOP.Protect "TESTE"
                 'Desproteger a Planilha
                 'Realizar as formatações
+        End If
+    Else
+        If mq.Locked Then
+            ApontaOP.Unprotect "TESTE"
+            mq.Locked = False
+            mq.ClearContents
+            id_funcionario.ClearContents
+            'ApontaOP.Unprotect "TESTE"
+            ApontaOP.Range("J2:L4").Clear
+            ApontaOP.Range("J2:L4").Interior.Color = RGB(255, 255, 255)
+            ApontaOP.Protect "TESTE"
         End If
     End If
 End If

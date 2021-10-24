@@ -4,7 +4,7 @@ Sub botao()
     If IsEmpty(ordem_prod.Value) Or ordem_prod.Value = " " Or IsEmpty(id_funcionario) _
     Or id_funcionario.Value = " " Or IsEmpty(mq.Value) Or mq.Value = " " Then
         MsgBox "Informe os valores"
-    Exit Sub
+        Exit Sub
     Else
         'Verifica se a OP existe nos registros
         op_registros = Application.Match(ordem_prod, registros.Range("A:A"), 0)
@@ -16,11 +16,12 @@ Sub botao()
     End If
     ApontaOP.Unprotect "TESTE"
     ordem_prod.ClearContents
-    mq.Locked = False
+'    mq.Locked = False
     mq.ClearContents
     id_funcionario.ClearContents
-    'ApontaOP.Unprotect "TESTE"
+    ApontaOP.Unprotect "TESTE"
     ApontaOP.Range("J2:L4").Clear
     ApontaOP.Range("J2:L4").Interior.Color = RGB(255, 255, 255)
     ApontaOP.Protect "TESTE"
+    ordem_prod.Activate
 End Sub
