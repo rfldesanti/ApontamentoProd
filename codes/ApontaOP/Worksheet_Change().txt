@@ -67,28 +67,31 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
         Else
             MsgBox "Vou formatar como entrada!"
             ApontaOP.Unprotect "TESTE"
-                With ApontaOP.Range("J2")
-                    .HorizontalAlignment = xlCenter
-                    .VerticalAlignment = xlCenter
+            'Limpar dados de mq caso a OP seja deletada
+            If mq.Locked Then
+                mq.Locked = False
+                mq.ClearContents
+            End If
+            With ApontaOP.Range("J2")
+                .HorizontalAlignment = xlCenter
+                .VerticalAlignment = xlCenter
+            End With
+            ApontaOP.Range("J2:L3").Merge
+                
+            Set sMerge = ApontaOP.Range("J2:L3")
+                
+            With sMerge
+                .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
+                .BorderAround ColorIndex:=3
+                .Interior.ColorIndex = 5
+                With .Font
+                    .Bold = True
+                    .Color = RGB(255, 255, 255)
                 End With
-                
-                ApontaOP.Range("J2:L3").Merge
-                
-                Set sMerge = ApontaOP.Range("J2:L3")
-                
-                With sMerge
-                    .Value = "REGISTRAR INÍCIO DE PRODUÇÃO - ENTRADA DE OP NA MÁQUINA"
-                    .BorderAround ColorIndex:=3
-                    .Interior.ColorIndex = 5
-                    With .Font
-                        .Bold = True
-                        .Color = RGB(255, 255, 255)
-                        
-                    End With
-                End With
-                ApontaOP.Protect "TESTE"
-                'Desproteger a Planilha
-                'Realizar as formatações
+            End With
+            ApontaOP.Protect "TESTE"
+            'Desproteger a Planilha
+            'Realizar as formatações
         End If
     Else
         If mq.Locked Then
@@ -104,4 +107,15 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
     End If
 End If
 registros.AutoFilterMode = False
+End Sub
+
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+
+If ordem_prod = " " Or IsEmpty(ordem_prod) Then
+    If ActiveCell.Address <> ordem_prod.Address Then
+        MsgBox "INFORME A ORDEM DE PRODUÇÃO!"
+        ordem_prod.Activate
+    End If
+End If
+
 End Sub
