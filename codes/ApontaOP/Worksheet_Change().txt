@@ -9,6 +9,7 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
             Call ContaLinhas
             If Not IsEmpty(registros.Cells(UltimaLinha - 1, 3)) Then
                 MsgBox "Vou formatar como entrada!"
+                
                 ApontaOP.Unprotect "TESTE"
                 'Limpar dados de mq caso a OP seja deletada
                 If mq.Locked Then
@@ -103,6 +104,12 @@ If Not Intersect(ordem_prod, Target) Is Nothing Then
             ApontaOP.Range("J2:L4").Clear
             ApontaOP.Range("J2:L4").Interior.Color = RGB(255, 255, 255)
             ApontaOP.Protect "TESTE"
+        Else
+            ApontaOP.Unprotect "TESTE"
+            ApontaOP.Range("J2:L4").Clear
+            ApontaOP.Range("J2:L4").Interior.Color = RGB(255, 255, 255)
+            ApontaOP.Protect "TESTE"
+            ordem_prod.Activate
         End If
     End If
 End If
